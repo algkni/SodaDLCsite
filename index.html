@@ -1729,7 +1729,7 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
 <script>
 (function(){
   var cv=document.querySelector('.x-cards'),wrap=cv&&cv.parentNode,grid=document.getElementById('productGrid');
-  if(!cv||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  if(!cv||!grid)return;
   var gl=cv.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:true,powerPreference:'low-power'});
   if(!gl)return;
   var VS='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
@@ -1762,15 +1762,19 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   var dpr=Math.min(window.devicePixelRatio||1,innerWidth<650?1.5:1.75),vis=false,last=0,t0=performance.now(),hov=-1,arr=new Float32Array(16);
   grid.addEventListener('pointermove',function(e){var c=e.target.closest('.product-card');hov=c?Array.prototype.indexOf.call(grid.children,c):-1},{passive:true});
   grid.addEventListener('pointerleave',function(){hov=-1});
-  function fr(now){if(!vis||document.hidden)return;requestAnimationFrame(fr);if(now-last<33)return;last=now;
+  function fr(now){if(document.hidden){running=false;return;}requestAnimationFrame(fr);if(!vis)return;if(now-last<33)return;last=now;
     var br=cv.getBoundingClientRect(),w=Math.max(2,Math.round(br.width*dpr)),hh=Math.max(2,Math.round(br.height*dpr));
     if(cv.width!==w||cv.height!==hh){cv.width=w;cv.height=hh}gl.viewport(0,0,w,hh);
     var cards=grid.children,k=0;arr.fill(0);
     for(var i=0;i<cards.length&&k<4;i++){var r=cards[i].getBoundingClientRect();if(r.width<2)continue;arr[k*4]=(r.left-br.left)*dpr;arr[k*4+1]=(r.top-br.top)*dpr;arr[k*4+2]=r.width*dpr;arr[k*4+3]=r.height*dpr;k++}
     gl.uniform2f(uR,w,hh);gl.uniform1f(uT,(now-t0)/1000);gl.uniform1f(uD,dpr);gl.uniform4fv(uC,arr);gl.uniform1f(uN,k);gl.uniform1f(uH,hov);
     gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,3)}
-  new IntersectionObserver(function(e){var on=e[0].isIntersecting;if(on&&!vis){vis=true;requestAnimationFrame(fr)}vis=on},{rootMargin:'80px'}).observe(wrap);
-  document.addEventListener('visibilitychange',function(){if(!document.hidden&&vis)requestAnimationFrame(fr)});
+  var running=false;
+  function start(){if(!running&&!document.hidden){running=true;requestAnimationFrame(fr)}}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis)start()},{rootMargin:'240px'}).observe(wrap);
+  }else{vis=true;start()}
+  document.addEventListener('visibilitychange',function(){if(!document.hidden){start()}});
 })();
 </script>
 
