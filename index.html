@@ -1881,3 +1881,13 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
 <script id="sodadlc-feature-rail-final">(function(){var r=document.querySelector('.x-rail');if(r)r.innerHTML="<article class=\"x-tilt reveal\" style=\"--i:0\"><div class=\"x-ico\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 3 4.5 6v5.2c0 4.6 3.1 7.8 7.5 9.8 4.4-2 7.5-5.2 7.5-9.8V6L12 3Z\"/><path d=\"m8.5 12 2.2 2.2 4.8-5\"/></svg></div><small>01 · ЗАЩИТА</small><strong>Обходы</strong><p>Продуманные обходы игровых ограничений и защит для более стабильной работы клиента.</p></article>\n<article class=\"x-tilt reveal\" style=\"--i:1\"><div class=\"x-ico\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\"><path d=\"M4 17.5 9 12l3.2 3.2L20 7.5\"/><path d=\"M14.5 7.5H20V13\"/></svg></div><small>02 · ПРОИЗВОДИТЕЛЬНОСТЬ</small><strong>Оптимизация</strong><p>Внимание к быстродействию и плавности, чтобы клиент не мешал комфортной игре.</p></article>\n<article class=\"x-tilt reveal\" style=\"--i:2\"><div class=\"x-ico\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2.5\"/><path d=\"M3 9h18M7 6.5h.01M10 6.5h.01M7 13h4M7 16h7\"/></svg></div><small>03 · ВНЕШНИЙ ВИД</small><strong>Красивый интерфейс</strong><p>Современный и понятный интерфейс с аккуратными элементами и удобной навигацией.</p></article>";})();</script>
 </body>
 </html>
+<style id="sodadlc-global-motion-pacing">
+/* Global desktop motion pacing: soften every remaining UI transition/loop */
+@media(min-width:901px) and (pointer:fine){
+ *:not(.loader):not(.loader *){animation-duration:1.8s!important;transition-duration:.9s!important;transition-timing-function:cubic-bezier(.22,.75,.25,1)!important}
+ .mq-track{animation-duration:78s!important}.x-title,.hero h1,.gradient-text,.x-rail .x-tilt strong{animation-duration:18s!important}
+ body::before,body::after,#app::after{animation-duration:65s!important}#sparkles i{animation-duration:14s!important}
+ .x-badge i{animation-duration:4.5s!important}.x-scroll::after{animation-duration:3.4s!important}
+ .primary-btn::after,.buy-btn::after,.nav-cta::before,.auth-btn.primary::before,.buy-btn::before{animation-duration:18s!important}
+}
+</style>
