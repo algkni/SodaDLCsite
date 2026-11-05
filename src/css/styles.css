@@ -1452,12 +1452,27 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 @media(min-width:901px) and (pointer:fine){.x-rail .x-tilt{transition:transform 1.05s cubic-bezier(.22,.75,.25,1),box-shadow 1.05s ease,border-color 1.05s ease!important;transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateZ(0)!important}.x-rail .x-tilt:hover{transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateY(-4px)!important}.x-rail .x-tilt strong,.x-title,.hero h1,.gradient-text{animation-duration:18s!important;animation-timing-function:ease-in-out!important}.x-tilt::before{animation:emeraldCardSheen 18s ease-in-out infinite!important}.mq-track{animation-duration:78s!important}#sparkles i{animation-duration:14s!important}body::before,body::after,#app::after{animation-duration:65s!important}.reveal{transition-duration:1.35s!important}}
 
 
-/* Global desktop motion pacing: soften every remaining UI transition/loop */
-@media(min-width:901px) and (pointer:fine){
- *:not(.loader):not(.loader *){animation-duration:1.8s!important;transition-duration:.9s!important;transition-timing-function:cubic-bezier(.22,.75,.25,1)!important}
- .mq-track{animation-duration:78s!important}.x-title,.hero h1,.gradient-text,.x-rail .x-tilt strong{animation-duration:18s!important}
+.x-title,.hero h1,.gradient-text,.x-rail .x-tilt strong{animation-duration:18s!important}
  body::before,body::after,#app::after{animation-duration:65s!important}#sparkles i{animation-duration:14s!important}
  .x-badge i{animation-duration:4.5s!important}.x-scroll::after{animation-duration:3.4s!important}
  .primary-btn::after,.buy-btn::after,.nav-cta::before,.auth-btn.primary::before,.buy-btn::before{animation-duration:18s!important}
 }
 
+
+/* DESKTOP CINEMATIC MOTION: intentionally restrained, slow and smooth */
+@media (min-width:901px) and (pointer:fine){
+ .loader{transition:opacity 1.25s cubic-bezier(.22,.61,.36,1),visibility 1.25s!important}
+ .loader-word{animation:wordIn 2.4s .35s cubic-bezier(.16,1,.3,1) both!important}
+ .loader-script{animation:wordWipe 5.8s .55s cubic-bezier(.22,.61,.36,1) forwards!important}
+ .loader-spark{animation:sparkIn 2.4s .35s cubic-bezier(.16,1,.3,1) both!important}
+ .loader-bar::after{animation:barFill 6.8s cubic-bezier(.22,.61,.36,1) forwards!important}
+ .cold-mist i:nth-child(1){animation-duration:58s!important}.cold-mist i:nth-child(2){animation-duration:72s!important}.cold-mist i:nth-child(3){animation-duration:82s!important}.cold-mist i:nth-child(4){animation-duration:68s!important}
+ body::before,body::after{animation-duration:70s!important}#glow{transition:transform 1.1s cubic-bezier(.22,.61,.36,1)!important}
+ .cube{animation-duration:12s!important}.orbit{animation-duration:18s!important}.orbit:before{animation-duration:70s!important}.orbit-glow{animation-duration:14s!important}
+ .gradient-text{animation-duration:18s!important}.brand-mark:after{animation-duration:12s!important}.brand-mark,.product-icon,.feature-icon{animation-duration:16s!important}
+ .primary-btn:before,.nav-cta:before,.auth-btn.primary:before,.buy-btn:before,.telegram-link:before{animation-duration:14s!important}
+ .mq-track{animation-duration:100s!important}#sparkles i{animation-duration:20s!important}
+ .reveal{transition:opacity 1.2s cubic-bezier(.22,.61,.36,1),transform 1.2s cubic-bezier(.22,.61,.36,1)!important}
+ .product-card,.feature,.step,.x-tilt,.x-feat,.x-step,.faq-item,.primary-btn,.ghost-btn,.buy-btn,.nav a,.x-dot,.x-fi,.modal,.modal-backdrop,.faq-q span:last-child{transition-duration:1s!important;transition-timing-function:cubic-bezier(.22,.61,.36,1)!important}
+ .product-card:after,.feature:after,.step:after,.proof-pill:after{transition-duration:1.4s!important}.x-tilt::before{animation-duration:22s!important}.x-cta{animation-duration:24s!important}
+}
