@@ -1912,6 +1912,46 @@ body{font-family:'DM Sans',Manrope,system-ui,sans-serif;letter-spacing:0}
 }
 </style>
 
+
+<style id="sodadlc-shader-visibility-hotfix">
+/* Keep the headline gradient clipped to the glyphs, never to the element box. */
+.x-title{
+  background-image:linear-gradient(108deg,#f4fff6 0%,#c5efd0 20%,#75c98d 43%,#e7f8ea 55%,#91d5a4 76%,#f4fff6 100%)!important;
+  background-size:260% 100%!important;
+  background-clip:text!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  color:transparent!important;
+  animation:sodaTitleShimmer 7s ease-in-out infinite alternate!important;
+  filter:drop-shadow(0 0 16px rgba(96,185,119,.12))!important;
+}
+/* The original shared WebGL canvas and shader animation remain untouched.
+   Remove the opaque card fill so the animated shader can be seen through the cards. */
+.x-gridwrap.gl #productGrid .product-card,
+.x-gridwrap.gl #productGrid .product-card:hover,
+.x-gridwrap.gl #productGrid .product-card:active,
+.x-gridwrap.gl #productGrid .product-card:focus-within{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:0 12px 32px rgba(0,0,0,.16),inset 0 1px rgba(255,255,255,.035)!important;
+  border-color:rgba(150,205,161,.25)!important;
+  overflow:visible!important;
+}
+.x-gridwrap.gl #productGrid .product-card.featured{
+  border-color:rgba(174,224,184,.42)!important;
+}
+.x-gridwrap .x-cards{opacity:.82!important;filter:saturate(.78) brightness(.88)}
+.x-gridwrap.gl #productGrid .product-card .buy-btn{
+  background:rgba(8,17,11,.62)!important;
+  border-color:rgba(145,201,155,.3)!important;
+}
+.x-gridwrap.gl #productGrid .product-card .buy-btn:hover{
+  background:linear-gradient(135deg,#c0ebca,#83c99a)!important;
+  color:#102016!important;
+}
+</style>
+
 </head>
 <body>
 <div class="loader" id="loader" aria-label="SodaDLC"><i class="loader-bar"></i><div class="loader-word"><span class="loader-spark">✦</span><span class="loader-script"><span class="ls">S</span>odaDLC</span></div></div>
