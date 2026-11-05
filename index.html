@@ -1675,6 +1675,36 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 }
 .faq-list .faq-q span:last-child{color:#9fe5b5!important}
 </style>
+
+<style id="sodadlc-title-shimmer-final">
+.x-title{
+  background-image:linear-gradient(105deg,
+    #f5fff8 0%,
+    #a8edbd 18%,
+    #48c978 36%,
+    #e0ffea 50%,
+    #63d98e 64%,
+    #c4f8d5 82%,
+    #f5fff8 100%)!important;
+  background-size:300% 100%!important;
+  background-position:0% 50%!important;
+  background-clip:text!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  color:transparent!important;
+  animation:sodaTitleShimmer 6s ease-in-out infinite alternate!important;
+  filter:drop-shadow(0 0 18px rgba(75,210,125,.16));
+  will-change:background-position;
+}
+@keyframes sodaTitleShimmer{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .x-title{animation:none!important;will-change:auto;background-position:50% 50%!important}
+}
+</style>
+
 </head>
 <body>
 <div class="loader" id="loader" aria-label="SodaDLC"><i class="loader-bar"></i><div class="loader-word"><span class="loader-spark">✦</span><span class="loader-script"><span class="ls">S</span>odaDLC</span></div></div>
