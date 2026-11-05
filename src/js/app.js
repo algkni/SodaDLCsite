@@ -33,7 +33,7 @@
   document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run)requestAnimationFrame(fr)});
   function fr(now){if(!run)return;requestAnimationFrame(fr);if(now-last<33)return;last=now;
     mx+=(tx-mx)*.06;my+=(ty-my)*.06;
-    gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,(now-t0)/1000);gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLES,0,3)}
+    gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,(now-t0)/1000*(innerWidth>900?.58:1));gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLES,0,3)}
   requestAnimationFrame(fr);
 })();
 
