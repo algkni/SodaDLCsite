@@ -1447,3 +1447,6 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 }
 
 
+
+/* SODADLC SMOOTH DESKTOP FINAL */
+@media(min-width:901px) and (pointer:fine){.x-rail .x-tilt{transition:transform 1.05s cubic-bezier(.22,.75,.25,1),box-shadow 1.05s ease,border-color 1.05s ease!important;transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateZ(0)!important}.x-rail .x-tilt:hover{transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateY(-4px)!important}.x-rail .x-tilt strong,.x-title,.hero h1,.gradient-text{animation-duration:18s!important;animation-timing-function:ease-in-out!important}.x-tilt::before{animation:emeraldCardSheen 18s ease-in-out infinite!important}.mq-track{animation-duration:78s!important}#sparkles i{animation-duration:14s!important}body::before,body::after,#app::after{animation-duration:65s!important}.reveal{transition-duration:1.35s!important}}
