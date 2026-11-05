@@ -916,10 +916,10 @@ body{font-family:"Manrope",system-ui,sans-serif}
 .x-cards{position:absolute;left:-24px;top:-34px;width:calc(100% + 48px);height:calc(100% + 68px);z-index:0;pointer-events:none;display:block}
 .x-gridwrap #productGrid{position:relative;z-index:1}
 .x-gridwrap.gl #productGrid .product-card,.x-gridwrap.gl #productGrid .product-card:hover,.x-gridwrap.gl #productGrid .product-card:active,.x-gridwrap.gl #productGrid .product-card:focus-within{
-  background:transparent!important;background-image:none!important;border:1px solid rgba(214,196,255,.28)!important;box-shadow:none!important;overflow:visible}
-.x-gridwrap.gl #productGrid .product-card.featured{border-color:rgba(245,236,255,.7)!important}
-.x-gridwrap.gl #productGrid .product-card .desc,.x-gridwrap.gl #productGrid .product-card .price-note,.x-gridwrap.gl #productGrid .product-card .product-tag{text-shadow:0 1px 10px rgba(6,2,16,.95)}
-.x-gridwrap.gl #productGrid .product-card h3{text-shadow:0 2px 16px rgba(6,2,16,.95)}
+  background:transparent!important;background-image:none!important;border:1px solid rgba(132,224,160,.34)!important;box-shadow:none!important;overflow:visible}
+.x-gridwrap.gl #productGrid .product-card.featured{border-color:rgba(190,255,210,.72)!important}
+.x-gridwrap.gl #productGrid .product-card .desc,.x-gridwrap.gl #productGrid .product-card .price-note,.x-gridwrap.gl #productGrid .product-card .product-tag{text-shadow:0 1px 10px rgba(3,13,7,.94)}
+.x-gridwrap.gl #productGrid .product-card h3{text-shadow:0 2px 16px rgba(3,13,7,.94)}
 .x-gridwrap.gl #productGrid .product-card .buy-btn{background:rgba(10,4,24,.55)!important;border-color:rgba(214,196,255,.4)!important}
 .x-gridwrap.gl #productGrid .product-card .buy-btn:hover{background:var(--chrome)!important;background-size:240% 100%!important}
 </style>
@@ -1252,7 +1252,7 @@ body,#app{background:#080f0c!important;color:#eff8f1}
 #app{background:radial-gradient(ellipse at 50% -12%,rgba(49,137,82,.16),transparent 48%),#080f0c!important}
 .ambient.one{background:radial-gradient(circle,rgba(61,173,104,.13),transparent 68%)!important}
 .ambient.two{background:radial-gradient(circle,rgba(34,111,70,.12),transparent 68%)!important}
-.noise,#shader,#glow,.x-orb,.x-marble,.x-cards,#sparkles{display:none!important}
+.noise,#shader,#glow,.x-orb,.x-marble,#sparkles{display:none!important}
 .x-nav{background:rgba(8,15,12,.82)!important;border-color:rgba(156,220,177,.13)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .x-nav.scrolled{box-shadow:0 10px 35px rgba(0,0,0,.22)!important}
 .x-brand,.x-brand:hover{color:#eff8f1!important}
@@ -1681,7 +1681,7 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
       var vein=Math.pow(1-Math.abs(Math.sin((u*1.1+v*.8+w*3.2)*Math.PI)),9);
       var vein2=Math.pow(1-Math.abs(Math.sin((u*.6-v*1.2+w*4.4)*Math.PI)),14);
       var cloud=w*.55,i=(y*N+xx)*4;
-      var R=120+vein*135+vein2*100+cloud*60,G=70+vein*120+vein2*70+cloud*30,B=210+vein*45+vein2*30;
+      var R=55+vein*90+vein2*55+cloud*35,G=115+vein*125+vein2*75+cloud*55,B=72+vein*90+vein2*55+cloud*35;
       im.data[i]=Math.min(255,R);im.data[i+1]=Math.min(255,G);im.data[i+2]=Math.min(255,B);
       im.data[i+3]=Math.round(Math.min(1,.08+cloud*.16+vein*.2+vein2*.14)*255)}
     x.putImageData(im,0,0);return 'url('+c.toDataURL('image/png')+')'}
