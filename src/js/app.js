@@ -31,7 +31,7 @@
   addEventListener('pointermove',function(e){tx=e.clientX/innerWidth;ty=1-e.clientY/innerHeight},{passive:true});
   var last=0,run=true,t0=performance.now();
   document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run)requestAnimationFrame(fr)});
-  function fr(now){if(!run)return;requestAnimationFrame(fr);if(now-last<33)return;last=now;
+  function fr(now){if(!run)return;requestAnimationFrame(fr);if(now-last<16.666)return;last=now;
     mx+=(tx-mx)*.06;my+=(ty-my)*.06;
     gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,(now-t0)/1000*(innerWidth>900?.58:1));gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLES,0,3)}
   requestAnimationFrame(fr);
@@ -183,7 +183,7 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}';
   function shader(cv,body,scale,cap){
     if(!cv||matchMedia('(prefers-reduced-motion:reduce)').matches){if(cv)cv.style.display='none';return}
-    var gl=cv.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:true,powerPreference:'low-power'});
+    var gl=cv.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:true,powerPreference:'high-performance',preserveDrawingBuffer:false});
     if(!gl){cv.style.display='none';return}
     function cp(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null}
     var v=cp(gl.VERTEX_SHADER,VS),f=cp(gl.FRAGMENT_SHADER,HEAD+body);if(!v||!f){cv.style.display='none';return}
@@ -248,7 +248,7 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   var lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
   var uR=gl.getUniformLocation(pr,'R'),uT=gl.getUniformLocation(pr,'T'),uD=gl.getUniformLocation(pr,'D'),uC=gl.getUniformLocation(pr,'C'),uN=gl.getUniformLocation(pr,'N'),uH=gl.getUniformLocation(pr,'H');
   wrap.classList.add('gl');
-  var dpr=Math.min(window.devicePixelRatio||1,innerWidth<650?1.5:1.75),vis=false,last=0,t0=performance.now(),hov=-1,arr=new Float32Array(16);
+  var dpr=Math.min(window.devicePixelRatio||1,innerWidth<650?1.5:2.5),vis=false,last=0,t0=performance.now(),hov=-1,arr=new Float32Array(16);
   grid.addEventListener('pointermove',function(e){var c=e.target.closest('.product-card');hov=c?Array.prototype.indexOf.call(grid.children,c):-1},{passive:true});
   grid.addEventListener('pointerleave',function(){hov=-1});
   function fr(now){if(!vis||document.hidden)return;requestAnimationFrame(fr);if(now-last<33)return;last=now;
