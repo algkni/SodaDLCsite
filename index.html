@@ -1459,8 +1459,7 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 .loader-script{animation-duration:5.2s!important}
 .loader-bar::after{animation-duration:5.8s!important}
 @media(min-width:901px) and (pointer:fine){
-  .ambient,.cold-mist i{animation-duration:calc(var(--motion-duration,1)*1s)!important}
-  .x-cta{animation-duration:16s!important}
+.x-cta{animation-duration:16s!important}
   .x-steps::after{transition-duration:2.4s!important}
   .x-step,.x-feat,.x-tilt,.product-card,.faq-item,.primary-btn,.ghost-btn,.buy-btn,.nav a,.x-dot,.x-fi{
     transition-duration:.65s!important;
@@ -1512,7 +1511,7 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
   document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run)requestAnimationFrame(fr)});
   function fr(now){if(!run)return;requestAnimationFrame(fr);if(now-last<33)return;last=now;
     mx+=(tx-mx)*.06;my+=(ty-my)*.06;
-    gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,(now-t0)/1000);gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLES,0,3)}
+    gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,(now-t0)/1000*(innerWidth>900?.58:1));gl.uniform2f(uM,mx,my);gl.drawArrays(gl.TRIANGLES,0,3)}
   requestAnimationFrame(fr);
 })();
 </script>
