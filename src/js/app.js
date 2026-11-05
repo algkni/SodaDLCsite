@@ -204,13 +204,13 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   shader(document.querySelector('.x-orb'),MARB+
     'void main(){vec2 p=(gl_FragCoord.xy-.5*R)/R.y;float t=T*.05;float m=marb(p*1.2,t);'+
     'vec2 q=vec2(fbm(p*1.6+t),fbm(p*1.6-t+3.));float w=fbm(p*1.5+q*1.6);'+
-    'vec3 deep=vec3(.10,.03,.26),mid=vec3(.42,.2,.85),hi=vec3(.95,.8,1.),pk=vec3(.95,.4,.95);'+
+    'vec3 deep=vec3(.025,.10,.05),mid=vec3(.10,.42,.22),hi=vec3(.82,1.,.88),pk=vec3(.35,.85,.52);'+
     'vec3 col=mix(deep,mid,w);col+=hi*m*.8;col+=pk*pow(max(0.,w-.5),2.)*1.4*(.5+.5*sin(T*.4+p.x*3.));'+
     'float a=smoothstep(.62,.05,length(p*vec2(.62,1.15)));a*=.85;gl_FragColor=vec4(col*a,a);}',.42,30);
   /* CTA: flowing marble veins */
   shader(document.querySelector('.x-marble'),MARB+
     'void main(){vec2 p=(gl_FragCoord.xy-.5*R)/R.y;float t=T*.045;float m=marb(p*1.1,t);'+
-    'float w=fbm(p*1.2+t);vec3 col=mix(vec3(.04,.01,.1),vec3(.30,.12,.62),w)+vec3(.85,.7,1.)*m*.55+vec3(.95,.4,.95)*pow(m,3.)*.4;'+
+    'float w=fbm(p*1.2+t);vec3 col=mix(vec3(.015,.05,.025),vec3(.08,.30,.16),w)+vec3(.65,.95,.75)*m*.55+vec3(.25,.8,.42)*pow(m,3.)*.4;'+
     'float a=.9*smoothstep(1.3,.2,length(p*vec2(.55,1.))+0.);gl_FragColor=vec4(col*a,a);}',.35,24);
 })();
 
@@ -227,18 +227,18 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
   'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}'+
   'float sdb(vec2 p,vec2 b,float r){vec2 q=abs(p)-b+r;return min(max(q.x,q.y),0.)+length(max(q,0.))-r;}'+
-  'vec3 pal(float t){return vec3(.46,.26,.78)+vec3(.34,.26,.30)*cos(6.2832*(vec3(1.,1.,1.)*t+vec3(0.,.12,.27)));}'+
+  'vec3 pal(float t){return vec3(.12,.48,.25)+vec3(.24,.30,.22)*cos(6.2832*(vec3(1.,1.,1.)*t+vec3(0.,.12,.27)));}'+
   'void main(){vec2 fp=gl_FragCoord.xy;float dd=-1.;float best=-1.;vec2 lc=vec2(0.);vec2 sz=vec2(1.);float idx=0.;'+
   'for(int i=0;i<4;i++){if(float(i)>=N)break;vec4 c=C[i];vec2 ctr=vec2(c.x+c.z*.5,R.y-(c.y+c.w*.5));float d=sdb(fp-ctr,vec2(c.z,c.w)*.5,22.*D);if(d<dd||best<0.){if(d<0.||best<0.){dd=d;best=1.;lc=fp-ctr;sz=vec2(c.z,c.w);idx=float(i);}}}'+
   'if(dd>1.5){gl_FragColor=vec4(0.);return;}'+
   'float t=T*.07;vec2 p=lc/(380.*D)+idx*3.7;'+
   'vec2 q=vec2(fbm(p*1.5+t),fbm(p*1.5+5.2-t));float w=fbm(p*1.3+q*1.9);'+
   'float v1=pow(1.-abs(sin((p.x*1.5+p.y*1.0+w*3.6+t*1.2)*3.14159)),8.);float v2=pow(1.-abs(sin((p.x*.8-p.y*1.4+w*4.8-t)*3.14159)),14.);'+
-  'vec3 base=mix(vec3(.05,.02,.13),vec3(.2,.08,.44),w);'+
+  'vec3 base=mix(vec3(.015,.045,.025),vec3(.06,.22,.11),w);'+
   'vec3 iri=pal(w*.9+t*1.6+p.x*.25);'+
-  'vec3 col=base+iri*.22*smoothstep(.25,.8,w)+vec3(.9,.78,1.)*(v1*.36+v2*.3)+vec3(.95,.4,.95)*pow(v1,3.)*.28;'+
+  'vec3 col=base+iri*.22*smoothstep(.25,.8,w)+vec3(.75,1.,.82)*(v1*.36+v2*.3)+vec3(.25,.8,.42)*pow(v1,3.)*.28;'+
   'float hv=(abs(H-idx)<.5)?1.:0.;col*=1.+hv*.22;col+=iri*hv*.12;'+
-  'float fade=smoothstep(0.,-26.*D,dd);col+=vec3(.7,.5,1.)*(1.-fade)*.22;'+
+  'float fade=smoothstep(0.,-26.*D,dd);col+=vec3(.35,.8,.48)*(1.-fade)*.22;'+
   'col*=.86+.14*smoothstep(1.2,0.,length(lc/sz*2.));'+
   'float a=smoothstep(1.,-1.,dd);gl_FragColor=vec4(col*a,a);}';
   function cp(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null}
@@ -293,9 +293,9 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
   'float n=fbm(p*3.4+q*2.4+vec2(t*.7,-t*.4));'+
   'float wave=pow(max(0.,sin((p.x*3.2+p.y*2.1+n*4.2+t)*3.14159)),5.);'+
   'float wave2=pow(max(0.,sin((p.x*1.8-p.y*3.1+n*3.4-t*.7)*3.14159)),8.);'+
-  'vec3 c=mix(vec3(.12,.07,.34),vec3(.08,.42,.57),n);'+
-  'c+=vec3(.43,.27,.95)*wave*.48+vec3(.18,.82,.94)*wave2*.35;'+
-  'c+=vec3(.36,.17,.62)*smoothstep(.35,.9,fbm(p*1.3-vec2(t)));'+
+  'vec3 c=mix(vec3(.025,.09,.045),vec3(.08,.42,.25),n);'+
+  'c+=vec3(.25,.75,.42)*wave*.48+vec3(.35,.9,.62)*wave2*.35;'+
+  'c+=vec3(.12,.48,.25)*smoothstep(.35,.9,fbm(p*1.3-vec2(t)));'+
   'float edge=smoothstep(1.05,.15,length(p*vec2(.8,1.2)));float a=(.12+n*.14+wave*.13+wave2*.10)*edge;'+
   'gl_FragColor=vec4(c,a);}';
   function attach(modal){
