@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07030f">
+<title>SodaDLC — Premium Digital Store</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="loader" id="loader" aria-label="SodaDLC"><i class="loader-bar"></i><div class="loader-word"><span class="loader-spark">✦</span><span class="loader-script"><span class="ls">S</span>odaDLC</span></div></div>
+<canvas id="shader" aria-hidden="true"></canvas>
+
+<div id="app">
+  <div class="ambient one"></div><div class="ambient two"></div><div class="noise"></div>
+  <div id="glow" aria-hidden="true"></div>
+  <header class="x-nav" id="xnav">
+    <a class="x-brand" href="#home"><span class="brand-mark">S</span>SodaDLC</a>
+    <nav class="x-links"><a class="x-l" href="#catalog">Каталог</a><a class="x-l" href="#benefits">Преимущества</a><a class="x-l" href="#faq">FAQ</a><div class="auth-actions" id="authActions"><button class="auth-btn" onclick="openAuth('login')">Войти</button><button class="auth-btn primary" onclick="openAuth('register')">Регистрация</button></div></nav>
+  </header>
+  <main>
+    <section class="x-wrap x-hero" id="home">
+      <canvas class="x-orb" aria-hidden="true"></canvas>
+      <div class="x-badge"><i></i>Premium access</div>
+      <h1 class="x-title">SodaDLC</h1>
+      <div class="x-sub">Твой доступ. <b>Твои правила.</b></div>
+      <p class="x-lead">Сравни тарифы RAGE и LEGIT, заранее увидь точную стоимость и оформи доступ через менеджера в Telegram — спокойно и без скрытых условий.</p>
+      <div class="x-cta-row"><button class="primary-btn" onclick="document.querySelector('#catalog').scrollIntoView({behavior:'smooth'})">Смотреть тарифы <span>→</span></button><button class="ghost-btn" onclick="document.querySelector('#benefits').scrollIntoView({behavior:'smooth'})">Почему SodaDLC</button></div>
+      <div class="x-rail">
+        <article class="x-tilt reveal" style="--i:0"><div class="x-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.2 2.8 5.7 13h5.1l-.8 8.2L18.3 10h-5.2l.1-7.2Z"/></svg></div><small>RAGE · от</small><strong>15<em>⭐ звёзд</em></strong><p>Максимум возможностей. Сроки от одного дня до бессрочного доступа.</p></article>
+        <article class="x-tilt reveal" style="--i:1"><div class="x-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2.8 8.1 9.2-8.1 9.2L3.9 12 12 2.8Z"/><path d="m3.9 12 8.1 2.3 8.1-2.3M12 2.8v11.5"/></svg></div><small>LEGIT · от</small><strong>13<em>⭐ звёзд</em></strong><p>Отдельная линейка с собственными фиксированными ценами.</p></article>
+        <article class="x-tilt reveal" style="--i:2"><div class="x-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2.5 2.5 6.9 7 2.6-7 2.5-2.5 7-2.6-7-6.9-2.5 6.9-2.6L12 2.5Z"/><path d="m19 2 .7 2.1L22 5l-2.3.8L19 8l-.8-2.2L16 5l2.2-.9L19 2Z"/></svg></div><small>Оплата</small><strong>Stars<em>Telegram</em></strong><p>Цена известна заранее. Заказ через менеджера, без регистрации.</p></article>
+      </div>
+      <div class="x-scroll" aria-hidden="true"></div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div class="mq-track"><span class="hi">RAGE</span><span>✦</span><span>LEGIT</span><span>✦</span><span class="hi">TELEGRAM STARS</span><span>✦</span><span>БЫСТРЫЙ СТАРТ</span><span>✦</span><span class="hi">ЦЕНА ИЗВЕСТНА ЗАРАНЕЕ</span><span>✦</span><span>БЕЗ СКРЫТЫХ УСЛОВИЙ</span><span>✦</span><span class="hi">RAGE</span><span>✦</span><span>LEGIT</span><span>✦</span><span class="hi">TELEGRAM STARS</span><span>✦</span><span>БЫСТРЫЙ СТАРТ</span><span>✦</span><span class="hi">ЦЕНА ИЗВЕСТНА ЗАРАНЕЕ</span><span>✦</span><span>БЕЗ СКРЫТЫХ УСЛОВИЙ</span><span>✦</span></div></div>
+    <section class="x-wrap x-sec" id="catalog">
+      <div class="x-head c reveal"><div class="x-eyebrow">/ каталог</div><h2 class="x-h2">Выбери свой уровень</h2><p>Сравни RAGE и LEGIT, выбери срок и сразу увидишь итоговую стоимость. Никаких неожиданных доплат.</p></div>
+      <div class="x-tabwrap reveal"><div class="tabs" role="tablist"><button class="tab active" data-kind="rage" role="tab" aria-selected="true">RAGE</button><button class="tab" data-kind="legit" role="tab" aria-selected="false">LEGIT</button></div></div>
+      <div class="x-gridwrap"><canvas class="x-cards" aria-hidden="true"></canvas><div class="product-grid" id="productGrid" aria-live="polite"></div></div>
+      <div class="discount-note" id="discountNote" hidden><span style="font-size:18px">✦</span><span><b>Цены LEGIT:</b> отдельная линейка тарифов с фиксированной стоимостью.</span></div>
+    </section>
+    <section class="x-wrap x-sec" id="benefits">
+      <div class="x-head reveal"><div><div class="x-eyebrow">/ всё продумано</div><h2 class="x-h2">Больше, чем<br>просто покупка</h2></div><p>Никакой перегруженности — только самое важное, чтобы выбрать тариф и оформить заявку.</p></div>
+      <div class="x-feats">
+        <article class="x-feat reveal"><span class="x-num">01</span><div><h3>Два направления</h3><p>RAGE и LEGIT собраны в одном каталоге. Переключайся между ними и сравнивай условия.</p></div><div class="x-fi">✧</div></article>
+        <article class="x-feat reveal"><span class="x-num">02</span><div><h3>Гибкие сроки</h3><p>От одного дня до бессрочного тарифа — выбирай срок под свои задачи.</p></div><div class="x-fi">◷</div></article>
+        <article class="x-feat reveal"><span class="x-num">03</span><div><h3>Цены в звёздах</h3><p>Все цены отображаются в Telegram Stars и заранее указаны для каждой линейки.</p></div><div class="x-fi">⭐</div></article>
+      </div>
+    </section>
+    <section class="x-wrap x-sec">
+      <div class="x-head c reveal"><div class="x-eyebrow">/ как это работает</div><h2 class="x-h2">Три простых шага</h2></div>
+      <div class="x-steps reveal">
+        <article class="x-step"><div class="x-dot">1</div><h3>Выбери тариф</h3><p>Сравни линейки и срок доступа. Цена уже указана в каталоге.</p></article>
+        <article class="x-step"><div class="x-dot">2</div><h3>Свяжись с менеджером</h3><p>Нажми кнопку заказа и перейди в Telegram к @zirassov.</p></article>
+        <article class="x-step"><div class="x-dot">3</div><h3>Уточни оплату и доступ</h3><p>Менеджер объяснит дальнейшие шаги и ответит на вопросы.</p></article>
+      </div>
+    </section>
+    <section class="x-wrap x-sec" id="faq">
+      <div class="x-faq">
+        <div class="x-faq-side reveal"><div class="x-eyebrow">/ есть вопросы?</div><h2 class="x-h2">Коротко<br>и по делу</h2><p>Ответы на основные вопросы перед оформлением заказа.</p></div>
+        <div class="faq-list reveal"><div class="faq-item open"><button class="faq-q"><span>Как оформить заказ?</span><span>＋</span></button><div class="faq-a">Выберите линейку и срок, нажмите «Выбрать тариф», затем перейдите в Telegram и напишите менеджеру @zirassov. Название и стоимость выбранного тарифа будут показаны в окне заказа.</div></div><div class="faq-item"><button class="faq-q"><span>Что такое Telegram Stars?</span><span>＋</span></button><div class="faq-a">Это внутренняя цифровая валюта Telegram. Цены на сайте указаны именно в звёздах.</div></div><div class="faq-item"><button class="faq-q"><span>Как формируются цены LEGIT?</span><span>＋</span></button><div class="faq-a">У LEGIT своя фиксированная стоимость для каждого срока. Это самостоятельная линейка цен, а не скидка от RAGE.</div></div><div class="faq-item"><button class="faq-q"><span>Как оплатить заказ?</span><span>＋</span></button><div class="faq-a">Напишите @zirassov в Telegram. Менеджер объяснит порядок оплаты звёздами и поможет с получением доступа. Автоматическая оплата на сайте пока не подключена.</div></div></div>
+      </div>
+    </section>
+    <section class="x-wrap">
+      <div class="x-cta reveal"><div class="x-cta-in"><canvas class="x-marble" aria-hidden="true"></canvas><div class="x-eyebrow">/ готов начать?</div><h2>Выбери доступ<br>и забудь про сложности</h2><p>Тариф, цена и срок — всё видно сразу. Остаётся написать менеджеру в Telegram.</p><button class="primary-btn" onclick="document.querySelector('#catalog').scrollIntoView({behavior:'smooth'})">Выбрать тариф <span>→</span></button></div></div>
+    </section>
+  </main>
+  <footer class="x-wrap x-foot">
+    <div class="x-foot-row"><div>© 2026 SodaDLC. Все права защищены.</div><div><a href="#catalog">Каталог</a><a href="#faq">Помощь</a><a href="#home">Наверх ↑</a></div></div>
+    <div class="x-mark" aria-hidden="true">SodaDLC</div>
+  </footer>
+</div>
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modal-head"><div><div class="kicker">/ следующий шаг</div><h3 id="modalTitle">Тариф выбран!</h3></div><button class="close" id="closeModal" aria-label="Закрыть">×</button></div><p class="modal-sub">Отличный выбор! Чтобы оформить покупку, напиши нашему менеджеру в Telegram — <strong>@zirassov</strong>.</p><div class="order-summary"><span id="summaryName">RAGE · 1 день</span><strong id="summaryPrice">15 ⭐</strong></div><div class="contact-note">Напиши <strong>@zirassov</strong> в Telegram и укажи выбранный тариф. Менеджер подскажет, как оплатить заказ звёздами, ответит на вопросы и поможет получить доступ.</div><a class="telegram-link" href="https://t.me/zirassov" target="_blank" rel="noopener noreferrer">Перейти в Telegram <span>↗</span></a><div class="modal-hint">Оплата и выдача доступа согласовываются напрямую с менеджером. На сайте автоматическая оплата не подключена.</div></div></div>
+<div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal"><div class="modal-head"><div><div class="kicker">/ SodaDLC account</div><h3 id="authTitle">Вход в аккаунт</h3></div><button class="close" onclick="closeAuth()" aria-label="Закрыть">×</button></div><form id="authForm"><label class="auth-field">Никнейм<input class="field" id="authNick" autocomplete="username" autocapitalize="off" autocorrect="off" spellcheck="false" required minlength="3" maxlength="24" placeholder="Твой никнейм"></label><label class="auth-field">Пароль<input class="field" id="authPassword" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" required minlength="4" placeholder="••••••••"></label><label class="auth-field" id="authConfirmWrap" hidden>Подтверждение пароля<input class="field" id="authConfirmPassword" type="password" autocomplete="new-password" minlength="4" placeholder="Повтори пароль"></label><div class="auth-error" id="authError" role="alert"></div><button class="telegram-link" id="authSubmit" type="submit">Войти в аккаунт</button></form><div class="auth-switch" id="authSwitch">Нет аккаунта? <button type="button" onclick="openAuth('register')">Зарегистрироваться</button></div><div class="modal-hint">Демо-аккаунты сохраняются только в этом браузере и не синхронизируются между устройствами.</div></div></div>
+<div class="modal-backdrop" id="cabinetModal" role="dialog" aria-modal="true" aria-labelledby="cabinetTitle"><div class="modal cabinet"><div class="modal-head"><div><div class="kicker">/ personal space</div><h3 id="cabinetTitle">Личный кабинет</h3></div><button class="close" onclick="closeCabinet()" aria-label="Закрыть">×</button></div><div id="cabinetContent"></div></div></div>
+<div class="toast" id="toast">Заявка скопирована</div>
+
+<div id="scrollBar" aria-hidden="true"></div>
+
+<div id="sparkles" aria-hidden="true"></div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>
