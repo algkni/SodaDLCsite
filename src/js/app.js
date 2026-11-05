@@ -169,7 +169,7 @@ var n=innerWidth<650?10:22,h='';for(var i=0;i<n;i++){h+='<i style="left:'+(Math.
       var vein=Math.pow(1-Math.abs(Math.sin((u*1.1+v*.8+w*3.2)*Math.PI)),9);
       var vein2=Math.pow(1-Math.abs(Math.sin((u*.6-v*1.2+w*4.4)*Math.PI)),14);
       var cloud=w*.55,i=(y*N+xx)*4;
-      var R=120+vein*135+vein2*100+cloud*60,G=70+vein*120+vein2*70+cloud*30,B=210+vein*45+vein2*30;
+      var R=55+vein*90+vein2*55+cloud*35,G=115+vein*125+vein2*75+cloud*55,B=72+vein*90+vein2*55+cloud*35;
       im.data[i]=Math.min(255,R);im.data[i+1]=Math.min(255,G);im.data[i+2]=Math.min(255,B);
       im.data[i+3]=Math.round(Math.min(1,.08+cloud*.16+vein*.2+vein2*.14)*255)}
     x.putImageData(im,0,0);return 'url('+c.toDataURL('image/png')+')'}
