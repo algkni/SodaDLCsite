@@ -1450,3 +1450,14 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 
 /* SODADLC SMOOTH DESKTOP FINAL */
 @media(min-width:901px) and (pointer:fine){.x-rail .x-tilt{transition:transform 1.05s cubic-bezier(.22,.75,.25,1),box-shadow 1.05s ease,border-color 1.05s ease!important;transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateZ(0)!important}.x-rail .x-tilt:hover{transform:perspective(1400px) rotateX(calc(var(--rx,0deg)*.22)) rotateY(calc(var(--ry,0deg)*.22)) translateY(-4px)!important}.x-rail .x-tilt strong,.x-title,.hero h1,.gradient-text{animation-duration:18s!important;animation-timing-function:ease-in-out!important}.x-tilt::before{animation:emeraldCardSheen 18s ease-in-out infinite!important}.mq-track{animation-duration:78s!important}#sparkles i{animation-duration:14s!important}body::before,body::after,#app::after{animation-duration:65s!important}.reveal{transition-duration:1.35s!important}}
+
+
+/* Global desktop motion pacing: soften every remaining UI transition/loop */
+@media(min-width:901px) and (pointer:fine){
+ *:not(.loader):not(.loader *){animation-duration:1.8s!important;transition-duration:.9s!important;transition-timing-function:cubic-bezier(.22,.75,.25,1)!important}
+ .mq-track{animation-duration:78s!important}.x-title,.hero h1,.gradient-text,.x-rail .x-tilt strong{animation-duration:18s!important}
+ body::before,body::after,#app::after{animation-duration:65s!important}#sparkles i{animation-duration:14s!important}
+ .x-badge i{animation-duration:4.5s!important}.x-scroll::after{animation-duration:3.4s!important}
+ .primary-btn::after,.buy-btn::after,.nav-cta::before,.auth-btn.primary::before,.buy-btn::before{animation-duration:18s!important}
+}
+
