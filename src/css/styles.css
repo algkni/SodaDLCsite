@@ -1423,3 +1423,28 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 /* Remove legacy violet text and chrome on any remaining component */
 [class*="violet"],.violet{color:#a9efc0!important}
 
+
+
+
+/* SODADLC DESKTOP MOTION REFINEMENT */
+.loader{z-index:99999!important;display:grid!important;opacity:1;visibility:visible}
+.loader.done{opacity:0!important;visibility:hidden!important}
+.loader-spark{animation-play-state:running!important}
+.loader-word{animation-duration:2.2s!important}
+.loader-script{animation-duration:5.2s!important}
+.loader-bar::after{animation-duration:5.8s!important}
+@media(min-width:901px) and (pointer:fine){
+  .ambient,.cold-mist i{animation-duration:calc(var(--motion-duration,1)*1s)!important}
+  .x-cta{animation-duration:16s!important}
+  .x-steps::after{transition-duration:2.4s!important}
+  .x-step,.x-feat,.x-tilt,.product-card,.faq-item,.primary-btn,.ghost-btn,.buy-btn,.nav a,.x-dot,.x-fi{
+    transition-duration:.65s!important;
+  }
+  #productGrid .product-card{animation-duration:1s!important}
+  #sparkles i{animation-duration:calc(var(--d,6s)*1.7)!important}
+  .reveal{transition-duration:1.15s!important}
+  .x-num{transition-duration:.9s!important}
+  .x-cta-in::before{animation-duration:28s!important}
+}
+
+
