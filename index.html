@@ -996,12 +996,11 @@ body:after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opac
 @keyframes shaderShine{0%,58%{transform:translateX(-160%) skewX(-18deg);opacity:0}68%{opacity:.8}100%{transform:translateX(360%) skewX(-18deg);opacity:0}}
 @keyframes shaderBeam{0%{transform:translateY(-130%) rotate(12deg)}100%{transform:translateY(260%) rotate(12deg)}}
 @keyframes shaderDots{0%,100%{opacity:.18}50%{opacity:.48}}
-/* Reactive light follows the pointer on major surfaces */
-.modal,.cabinet-hero,.cabinet-metric,.cabinet-info-card,.admin-panel,.product-card,.feature,.step,.hero-panel,.x-tilt,.x-cta,.pricing-card,.faq-item,.stat-card{background-image:radial-gradient(340px circle at var(--shader-mx) var(--shader-my),rgba(143,117,255,.12),transparent 58%),radial-gradient(240px circle at calc(var(--shader-mx) + 12%) calc(var(--shader-my) - 15%),rgba(78,225,245,.07),transparent 64%),var(--surface-shader-bg,none);}
-/* Global panels: holographic edge + soft inner glow */
-.product-card,.feature,.step,.hero-panel,.pricing-card,.faq-item,.stat-card,.cabinet-metric,.cabinet-info-card,.admin-panel,.cabinet-welcome{position:relative;isolation:isolate;overflow:hidden;transition:border-color .35s ease,box-shadow .35s ease,filter .35s ease}
-.product-card:after,.feature:after,.step:after,.hero-panel:after,.pricing-card:after,.faq-item:after,.stat-card:after,.cabinet-metric:after,.cabinet-info-card:after,.admin-panel:after,.cabinet-welcome:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;background:linear-gradient(112deg,transparent 12%,rgba(255,255,255,.055) 30%,rgba(128,203,255,.07) 34%,transparent 51%),radial-gradient(ellipse at 0 0,rgba(140,105,255,.12),transparent 48%);background-size:220% 100%,100% 100%;animation:spectralSweep 13s linear infinite;opacity:.65}
-.product-card:hover,.feature:hover,.step:hover,.pricing-card:hover,.faq-item:hover,.cabinet-metric:hover,.cabinet-info-card:hover{border-color:rgba(171,151,255,.48)!important;box-shadow:0 14px 42px rgba(66,40,130,.16),inset 0 1px rgba(255,255,255,.10);filter:brightness(1.06)}
+/* FAQ cards: remove the old purple pointer streaks and holographic edge */
+.faq-item{background-image:linear-gradient(150deg,#172a1e 0%,#101d15 70%,#0e1912 100%)!important;}
+.faq-item:after,.faq-item:before{content:none!important;display:none!important;background:none!important;animation:none!important;}
+.faq-item:hover,.faq-item.open{border-color:rgba(137,224,165,.52)!important;box-shadow:0 14px 34px rgba(0,0,0,.24),0 0 24px rgba(52,164,95,.12)!important;background-image:linear-gradient(150deg,#1a3022 0%,#101d15 70%,#0e1912 100%)!important;}
+.faq-q:hover,.faq-q:focus,.faq-q:focus-visible{color:#f0fff4!important;background:transparent!important;outline-color:rgba(137,224,165,.45)!important;}
 /* Holographic buttons */
 button,.primary-btn,.ghost-btn,.nav-cta,.auth-btn,.buy-btn,.telegram-link{transition:transform .28s cubic-bezier(.2,.8,.2,1),filter .28s,border-color .28s,box-shadow .28s}
 button:not(:disabled):hover,.primary-btn:hover,.ghost-btn:hover,.nav-cta:hover,.auth-btn:hover,.buy-btn:hover,.telegram-link:hover{filter:brightness(1.12) saturate(1.12);box-shadow:0 7px 28px rgba(123,102,255,.17),0 0 0 1px rgba(172,153,255,.13)}
