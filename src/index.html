@@ -338,6 +338,33 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 #cabinetModal .cabinet-footer,#cabinetModal .cabinet-actions{border-color:rgba(112,190,133,.18)!important}#cabinetModal button:not(.close){color:#eaffef!important;border-color:rgba(112,190,133,.30)!important;background:linear-gradient(145deg,rgba(31,83,46,.82),rgba(14,43,24,.92))!important}#cabinetModal button.primary,#cabinetModal .primary{color:#07150c!important;background:linear-gradient(110deg,#a9efbd,#55c77d 58%,#36a965)!important;border-color:rgba(177,255,197,.42)!important}
 #authModal .close,#cabinetModal .close{color:#b8d8c1!important;background:rgba(20,54,31,.65)!important;border-color:rgba(112,190,133,.24)!important}
 </style>
+
+<style id="sodadlc-faq-hover-emerald-fix">
+/* FAQ cards: keep hover/focus states emerald, never purple */
+.faq-list .faq-item,
+.faq-list .faq-item:hover,
+.faq-list .faq-item:focus-within,
+.faq-list .faq-item.open:hover{
+  background:linear-gradient(150deg,#172a1e 0%,#101d15 70%,#0e1912 100%)!important;
+  background-color:#101d15!important;
+  border-color:rgba(133,207,157,.28)!important;
+}
+.faq-list .faq-item:hover,
+.faq-list .faq-item:focus-within,
+.faq-list .faq-item.open:hover{
+  border-color:rgba(137,224,165,.52)!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.24),0 0 24px rgba(52,164,95,.12)!important;
+}
+.faq-list .faq-q,
+.faq-list .faq-q:hover,
+.faq-list .faq-q:focus,
+.faq-list .faq-q:focus-visible{
+  color:#f0fff4!important;
+  background:transparent!important;
+  outline-color:rgba(137,224,165,.45)!important;
+}
+.faq-list .faq-q span:last-child{color:#9fe5b5!important}
+</style>
 </head>
 <body>
 <div class="loader" id="loader" aria-label="SodaDLC"><i class="loader-bar"></i><div class="loader-word"><span class="loader-spark">✦</span><span class="loader-script"><span class="ls">S</span>odaDLC</span></div></div>
