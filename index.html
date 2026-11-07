@@ -2592,6 +2592,107 @@ html,body,body *:not(svg):not(path):not(canvas){
 @media(max-width:650px){.x-links a.x-l:not(.x-builds-link){display:none!important}.x-links a.x-builds-link{display:inline-flex!important}}
 </style>
 
+
+<style id="sodadlc-faq-clean-redesign">
+/* Replace all conflicting legacy FAQ effects with one consistent card system. */
+#faq .x-faq{align-items:start!important}
+#faq .faq-list{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:14px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+#faq .faq-list .faq-item,
+#faq .faq-list .faq-item:hover,
+#faq .faq-list .faq-item:focus-within,
+#faq .faq-list .faq-item.open{
+  box-sizing:border-box!important;
+  display:block!important;
+  position:relative!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0 22px!important;
+  border:1px solid rgba(151,205,166,.19)!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,rgba(24,43,30,.88),rgba(13,25,17,.94))!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.035)!important;
+  overflow:hidden!important;
+  transform:none!important;
+  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease!important;
+}
+#faq .faq-list .faq-item::before,
+#faq .faq-list .faq-item::after{content:none!important;display:none!important}
+#faq .faq-list .faq-item:hover,
+#faq .faq-list .faq-item.open{
+  border-color:rgba(135,218,158,.42)!important;
+  background:linear-gradient(135deg,rgba(27,53,35,.96),rgba(14,29,19,.98))!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.22),0 0 22px rgba(70,175,105,.07)!important;
+}
+#faq .faq-list .faq-q,
+#faq .faq-list .faq-q:hover,
+#faq .faq-list .faq-q:focus,
+#faq .faq-list .faq-q:focus-visible{
+  appearance:none!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+  width:100%!important;
+  min-height:68px!important;
+  margin:0!important;
+  padding:19px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  outline:none!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#edf6ef!important;
+  font-family:inherit!important;
+  font-size:14px!important;
+  font-weight:650!important;
+  line-height:1.5!important;
+  letter-spacing:0!important;
+  text-align:left!important;
+  text-shadow:none!important;
+  transform:none!important;
+  filter:none!important;
+  -webkit-font-smoothing:antialiased!important;
+  -moz-osx-font-smoothing:grayscale!important;
+}
+#faq .faq-list .faq-q span:last-child{
+  flex:0 0 auto!important;
+  color:#9ce5b2!important;
+  font-size:21px!important;
+  font-weight:400!important;
+  line-height:1!important;
+}
+#faq .faq-list .faq-a{
+  box-sizing:border-box!important;
+  max-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  color:#b2c2b6!important;
+  font-family:inherit!important;
+  font-size:13px!important;
+  line-height:1.8!important;
+  letter-spacing:0!important;
+  text-shadow:none!important;
+  overflow:hidden!important;
+  transition:max-height .32s ease,padding .32s ease!important;
+}
+#faq .faq-list .faq-item.open .faq-a{
+  max-height:220px!important;
+  padding:0 0 20px!important;
+}
+@media(max-width:650px){
+  #faq .faq-list{gap:11px!important}
+  #faq .faq-list .faq-item{padding:0 17px!important;border-radius:15px!important}
+  #faq .faq-list .faq-q{min-height:62px!important;font-size:14px!important}
+}
+</style>
+
 </body>
 </html>
 
