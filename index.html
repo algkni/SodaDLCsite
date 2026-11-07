@@ -2779,6 +2779,213 @@ html,body{
 </style>
 
 
+
+<style id="sodadlc-liquid-glass-redesign-v2">
+:root{
+ --lg-white:rgba(245,255,248,.92);
+ --lg-muted:rgba(198,218,203,.72);
+ --lg-edge:rgba(226,255,234,.22);
+ --lg-edge-bright:rgba(228,255,236,.42);
+ --lg-glass:rgba(218,245,225,.075);
+ --lg-glass-deep:rgba(12,25,17,.62);
+ --lg-green:#a6efbd;
+}
+/* A quieter dark backdrop lets the translucent surfaces read as glass. */
+body{
+ background-color:#070d09!important;
+ background-image:
+  radial-gradient(ellipse at 50% 7%,rgba(105,180,125,.12),transparent 42%),
+  radial-gradient(ellipse at 8% 48%,rgba(91,144,108,.075),transparent 34%),
+  radial-gradient(ellipse at 92% 78%,rgba(120,175,134,.07),transparent 36%)!important;
+ color:#edf7ef!important;
+}
+#app{isolation:isolate}
+.x-nav{
+ background:linear-gradient(118deg,rgba(235,255,240,.13),rgba(175,222,188,.045) 34%,rgba(12,26,17,.52) 72%,rgba(225,255,232,.09)) padding-box,
+ linear-gradient(115deg,rgba(235,255,240,.48),rgba(191,237,203,.12) 42%,rgba(230,255,236,.3)) border-box!important;
+ border:1px solid transparent!important;border-radius:24px!important;
+ box-shadow:0 18px 54px rgba(0,0,0,.27),inset 0 1px 0 rgba(255,255,255,.23),inset 0 -1px 0 rgba(255,255,255,.035)!important;
+ -webkit-backdrop-filter:blur(28px) saturate(165%)!important;backdrop-filter:blur(28px) saturate(165%)!important;
+}
+.x-nav.scrolled{box-shadow:0 22px 60px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.22)!important}
+.x-brand{color:rgba(250,255,251,.96)!important}
+.x-brand .brand-mark{
+ border:1px solid rgba(234,255,239,.48)!important;border-radius:13px!important;
+ background:linear-gradient(145deg,rgba(238,255,242,.48),rgba(113,188,134,.22) 55%,rgba(23,78,42,.4))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.58),0 5px 20px rgba(0,0,0,.2)!important;
+ color:#f2fff5!important;
+}
+.x-links a.x-l{color:rgba(231,246,235,.76)!important;border:1px solid transparent!important}
+.x-links a.x-l:hover,.x-links a.x-l:focus-visible{
+ color:#fff!important;background:rgba(233,255,239,.105)!important;
+ border-color:rgba(235,255,240,.17)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)!important;
+}
+.x-nav .auth-btn{
+ border:1px solid rgba(231,255,237,.25)!important;border-radius:13px!important;
+ background:linear-gradient(145deg,rgba(243,255,246,.16),rgba(175,222,188,.055))!important;
+ color:#f0fff3!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 5px 15px rgba(0,0,0,.14)!important;
+ -webkit-backdrop-filter:blur(12px)!important;backdrop-filter:blur(12px)!important;
+}
+.x-nav .auth-btn.primary{
+ color:#092414!important;border-color:rgba(237,255,241,.76)!important;
+ background:linear-gradient(145deg,rgba(231,255,237,.96),rgba(151,229,173,.9) 48%,rgba(94,190,124,.94))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.78),0 7px 22px rgba(54,145,82,.22)!important;
+}
+/* Hero glass labels and controls. */
+.x-badge,.x-eyebrow{
+ border:1px solid rgba(232,255,238,.24)!important;border-radius:999px!important;
+ background:linear-gradient(135deg,rgba(239,255,243,.14),rgba(157,218,173,.035))!important;
+ color:rgba(229,249,234,.88)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 8px 25px rgba(0,0,0,.12)!important;
+ -webkit-backdrop-filter:blur(16px) saturate(145%)!important;backdrop-filter:blur(16px) saturate(145%)!important;
+}
+.x-badge i{background:#a9f1be!important;box-shadow:0 0 14px rgba(151,242,177,.8)!important}
+.x-sub,.x-lead{color:rgba(224,240,228,.78)!important}
+.x-cta-row .primary-btn,.x-cta-in .primary-btn{
+ border:1px solid rgba(239,255,243,.72)!important;border-radius:16px!important;
+ background:linear-gradient(145deg,rgba(232,255,238,.96),rgba(151,228,173,.94) 52%,rgba(83,184,117,.96))!important;
+ color:#092414!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 28px rgba(49,145,78,.22)!important;
+}
+.x-cta-row .ghost-btn{
+ border:1px solid rgba(231,255,237,.27)!important;border-radius:16px!important;
+ background:linear-gradient(145deg,rgba(245,255,247,.14),rgba(180,225,191,.045))!important;
+ color:#effaf1!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.19),0 8px 24px rgba(0,0,0,.12)!important;
+ -webkit-backdrop-filter:blur(18px) saturate(150%)!important;backdrop-filter:blur(18px) saturate(150%)!important;
+}
+.x-cta-row .primary-btn:hover,.x-cta-row .ghost-btn:hover,.x-cta-in .primary-btn:hover{transform:translateY(-2px)!important}
+/* Feature panels and steps: layered translucent material, not opaque green blocks. */
+.x-tilt,.x-feat,.x-step{
+ border:1px solid rgba(232,255,238,.2)!important;border-radius:25px!important;
+ background:
+  linear-gradient(145deg,rgba(246,255,248,.12),rgba(208,239,215,.035) 42%,rgba(8,24,14,.32)) padding-box,
+  linear-gradient(125deg,rgba(240,255,243,.38),rgba(178,224,190,.09) 48%,rgba(225,255,232,.2)) border-box!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.23),inset 0 -1px 0 rgba(255,255,255,.045),0 18px 48px rgba(0,0,0,.2)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(155%)!important;backdrop-filter:blur(24px) saturate(155%)!important;
+}
+.x-tilt:hover,.x-feat:hover,.x-step:hover{
+ border-color:rgba(240,255,244,.38)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 22px 52px rgba(0,0,0,.25)!important;
+}
+.x-ico,.x-num,.x-dot,.x-fi{
+ border:1px solid rgba(236,255,241,.25)!important;border-radius:15px!important;
+ background:linear-gradient(145deg,rgba(244,255,246,.2),rgba(151,211,166,.065))!important;
+ color:#d9f9e1!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 6px 18px rgba(0,0,0,.13)!important;
+}
+.x-tilt small{color:#b8f3c8!important}
+.x-tilt strong{filter:drop-shadow(0 2px 12px rgba(157,237,178,.12))}
+/* Catalog frame and selector only. The animated product cards and shader are intentionally untouched. */
+.x-tabwrap .tabs{
+ padding:5px!important;border:1px solid rgba(232,255,238,.2)!important;border-radius:17px!important;
+ background:linear-gradient(145deg,rgba(241,255,244,.12),rgba(166,215,179,.035))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.19),0 10px 28px rgba(0,0,0,.16)!important;
+ -webkit-backdrop-filter:blur(20px) saturate(150%)!important;backdrop-filter:blur(20px) saturate(150%)!important;
+}
+.x-tabwrap .tab{border-radius:12px!important;color:rgba(229,245,233,.72)!important;transition:background .2s,color .2s,box-shadow .2s!important}
+.x-tabwrap .tab.active{
+ background:linear-gradient(145deg,rgba(235,255,240,.24),rgba(150,213,166,.1))!important;
+ color:#f5fff7!important;border:1px solid rgba(235,255,240,.26)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 4px 14px rgba(0,0,0,.14)!important;
+}
+/* FAQ, bottom CTA and footer. */
+#faq .faq-item{
+ overflow:hidden!important;border:1px solid rgba(231,255,237,.2)!important;border-radius:20px!important;
+ background:linear-gradient(145deg,rgba(242,255,245,.11),rgba(167,218,179,.035) 48%,rgba(8,23,13,.28))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 12px 32px rgba(0,0,0,.16)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(150%)!important;backdrop-filter:blur(22px) saturate(150%)!important;
+}
+#faq .faq-item.open,#faq .faq-item:hover{border-color:rgba(234,255,239,.37)!important}
+#faq .faq-q{color:#f0faf2!important}
+#faq .faq-a{color:rgba(214,233,219,.78)!important}
+.x-cta{
+ border:1px solid rgba(232,255,238,.24)!important;border-radius:30px!important;
+ background:linear-gradient(145deg,rgba(244,255,246,.13),rgba(174,221,185,.04) 46%,rgba(7,22,12,.42))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.23),0 25px 65px rgba(0,0,0,.25)!important;
+ -webkit-backdrop-filter:blur(26px) saturate(155%)!important;backdrop-filter:blur(26px) saturate(155%)!important;
+}
+.x-foot{border-top:1px solid rgba(231,255,237,.12)!important}
+.x-foot a{color:rgba(213,240,220,.78)!important}
+.x-foot a:hover{color:#fff!important}
+/* All three dialogs share the same frosted, softly reflective material. */
+.modal-backdrop{
+ background:rgba(2,8,4,.62)!important;
+ -webkit-backdrop-filter:blur(20px) saturate(135%)!important;backdrop-filter:blur(20px) saturate(135%)!important;
+}
+.modal{
+ position:relative!important;overflow:hidden!important;
+ border:1px solid rgba(234,255,239,.29)!important;border-radius:26px!important;
+ background:
+  linear-gradient(145deg,rgba(244,255,246,.17),rgba(179,223,190,.055) 36%,rgba(9,23,14,.78) 100%) padding-box,
+  linear-gradient(130deg,rgba(247,255,249,.52),rgba(178,228,190,.12) 48%,rgba(234,255,239,.3)) border-box!important;
+ box-shadow:0 34px 100px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(255,255,255,.04)!important;
+ -webkit-backdrop-filter:blur(30px) saturate(165%)!important;backdrop-filter:blur(30px) saturate(165%)!important;
+}
+.modal-head{background:transparent!important;border-bottom:1px solid rgba(232,255,238,.16)!important}
+.modal-head h3{color:#f2fff4!important}
+.kicker{
+ border:1px solid rgba(234,255,239,.25)!important;border-radius:999px!important;
+ background:rgba(231,255,237,.1)!important;color:#c9f4d3!important;
+}
+.modal .close{
+ border:1px solid rgba(234,255,239,.26)!important;border-radius:13px!important;
+ background:linear-gradient(145deg,rgba(242,255,245,.18),rgba(157,213,170,.055))!important;
+ color:#effff2!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)!important;
+}
+.modal .field,.modal input.field,.modal select,.modal textarea{
+ border:1px solid rgba(229,255,236,.2)!important;border-radius:14px!important;
+ background:rgba(2,13,7,.38)!important;color:#f1fff4!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.045)!important;
+}
+.modal .field:focus,.modal input.field:focus,.modal select:focus{
+ border-color:rgba(185,245,198,.6)!important;box-shadow:0 0 0 4px rgba(128,214,151,.12)!important;
+}
+.modal .telegram-link,.modal #authSubmit{
+ border:1px solid rgba(241,255,244,.68)!important;border-radius:15px!important;
+ background:linear-gradient(145deg,rgba(230,255,237,.96),rgba(146,224,168,.94) 54%,rgba(79,177,111,.96))!important;
+ color:#082313!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.76),0 9px 25px rgba(46,142,76,.2)!important;
+}
+.modal .auth-switch{color:rgba(220,240,225,.76)!important}
+.modal .auth-switch button{color:#c3f5cf!important}
+.modal .modal-hint{color:rgba(195,218,201,.67)!important}
+/* Profile and admin surfaces inside the dynamically rendered cabinet. */
+.cabinet-body{color:#edf8ef!important}
+.cabinet-hero,.cabinet-metric,.cabinet-info-card,.admin-panel,.admin-list-item{
+ border:1px solid rgba(231,255,237,.19)!important;border-radius:19px!important;
+ background:linear-gradient(145deg,rgba(242,255,245,.115),rgba(172,218,182,.035) 48%,rgba(7,22,12,.3))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 12px 32px rgba(0,0,0,.15)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(150%)!important;backdrop-filter:blur(22px) saturate(150%)!important;
+}
+.cabinet-hero:after{color:rgba(238,255,241,.045)!important}
+.cabinet-avatar{
+ border:1px solid rgba(242,255,245,.65)!important;border-radius:18px!important;
+ background:linear-gradient(145deg,#edfff1,#a8e9ba 62%,#69c98a)!important;
+ color:#0b2815!important;box-shadow:inset 0 1px 0 white,0 8px 24px rgba(0,0,0,.18)!important;
+}
+.cabinet-greeting,.cabinet-section-title p,.cabinet-metric span,.cabinet-metric small,
+.cabinet-info-row span,.admin-panel>p{color:rgba(202,224,208,.68)!important}
+.cabinet-hero h4,.cabinet-section-title h4,.cabinet-metric strong,.cabinet-info-card h4,
+.cabinet-info-row strong,.admin-panel h4{color:#f0fff3!important}
+.role-chip,.admin-owner-tag{
+ border:1px solid rgba(229,255,236,.24)!important;border-radius:999px!important;
+ background:rgba(231,255,237,.1)!important;color:#d6f8de!important;
+}
+.admin-list{gap:9px!important}
+.toast{
+ border:1px solid rgba(231,255,237,.25)!important;border-radius:16px!important;
+ background:rgba(16,36,22,.84)!important;color:#effff2!important;
+ box-shadow:0 18px 48px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.2)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(150%)!important;backdrop-filter:blur(22px) saturate(150%)!important;
+}
+@media(max-width:760px){
+ .x-nav{-webkit-backdrop-filter:blur(22px) saturate(145%)!important;backdrop-filter:blur(22px) saturate(145%)!important}
+ .x-tilt,.x-feat,.x-step,#faq .faq-item{border-radius:19px!important}
+ .modal{border-radius:21px!important}
+ .cabinet-hero{align-items:flex-start!important;flex-direction:column!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .x-links a.x-l,.x-cta-row .primary-btn,.x-cta-row .ghost-btn{transition:none!important}
+}
+</style>
+
 </body>
 </html>
 
