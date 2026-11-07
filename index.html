@@ -2729,6 +2729,41 @@ html,body{
 }
 </style>
 
+
+<style id="sodadlc-hero-button-hover-cleanup">
+/* Clean hover state for the main "Смотреть тарифы" CTA. */
+.x-cta-row .primary-btn,
+.x-cta-row .primary-btn:hover,
+.x-cta-row .primary-btn:focus,
+.x-cta-row .primary-btn:focus-visible{
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  box-sizing:border-box!important;
+  border:1px solid rgba(165,238,187,.58)!important;
+  border-radius:13px!important;
+  background:linear-gradient(125deg,#b3f1c4 0%,#61cb84 52%,#319b5c 100%)!important;
+  color:#092414!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 7px 22px rgba(41,153,83,.20)!important;
+  filter:none!important;
+  transform:translateY(-1px)!important;
+  text-shadow:none!important;
+}
+.x-cta-row .primary-btn::before,
+.x-cta-row .primary-btn::after{
+  content:none!important;display:none!important;animation:none!important;
+  background:none!important;filter:none!important;box-shadow:none!important;
+}
+.x-cta-row .primary-btn span{
+  display:inline!important;position:static!important;
+  padding:0!important;margin:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;color:inherit!important;
+  text-shadow:none!important;transform:none!important;filter:none!important;
+}
+.x-cta-row .primary-btn:hover{
+  border-color:rgba(196,255,211,.88)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 9px 26px rgba(41,153,83,.28)!important;
+}
+</style>
+
 </body>
 </html>
 
