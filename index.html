@@ -2528,6 +2528,70 @@ button.close:hover,button.telegram-link:hover,.nav-cta:hover,.telegram-link:hove
 .faq-list .faq-item.open .faq-a{max-height:140px;padding:0 30px 18px 0!important}
 @media(max-width:760px){.x-links .x-builds-link{padding:8px 10px}}
 </style>
+
+<style id="sodadlc-faq-and-font-quality-fix">
+/* Restore smooth text rendering across the site. */
+html,body,body *:not(svg):not(path):not(canvas){
+  -webkit-font-smoothing:antialiased!important;
+  -moz-osx-font-smoothing:grayscale!important;
+  text-rendering:optimizeLegibility;
+}
+/* FAQ: rounded glass panels, clean spacing and readable typography. */
+.faq-list .faq-item,
+.faq-list .faq-item:hover,
+.faq-list .faq-item:focus-within,
+.faq-list .faq-item.open{
+  display:block!important;
+  margin:0 0 12px!important;
+  padding:0 20px!important;
+  border:1px solid rgba(165,220,180,.20)!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,rgba(25,48,33,.82),rgba(12,25,17,.78))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 10px 28px rgba(0,0,0,.18)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(125%)!important;
+  backdrop-filter:blur(14px) saturate(125%)!important;
+  overflow:hidden!important;
+}
+.faq-list .faq-item:hover,.faq-list .faq-item.open{
+  border-color:rgba(145,220,165,.42)!important;
+}
+.faq-list .faq-q,
+.faq-list .faq-q:hover,
+.faq-list .faq-q:focus{
+  display:flex!important;
+  width:100%!important;
+  min-height:64px!important;
+  padding:18px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#e8f3eb!important;
+  font-family:var(--site-font-body)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  -webkit-font-smoothing:antialiased!important;
+  text-rendering:optimizeLegibility!important;
+}
+.faq-list .faq-q span:last-child{color:#a5f2c5!important;font-size:20px!important}
+.faq-list .faq-a{
+  max-height:0!important;
+  padding:0!important;
+  color:#aab9ae!important;
+  font-size:12px!important;
+  line-height:1.8!important;
+  overflow:hidden!important;
+  transition:max-height .35s ease,padding .35s ease!important;
+}
+.faq-list .faq-item.open .faq-a{
+  max-height:180px!important;
+  padding:0 0 18px!important;
+}
+/* Keep the Builds shortcut visible even in the compact navigation. */
+.x-links a.x-builds-link{display:inline-flex!important;align-items:center;white-space:nowrap}
+@media(max-width:650px){.x-links a.x-l:not(.x-builds-link){display:none!important}.x-links a.x-builds-link{display:inline-flex!important}}
+</style>
+
 </body>
 </html>
 
