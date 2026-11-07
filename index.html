@@ -2132,7 +2132,7 @@ button:not(.buy-btn):not(.tab):not(.faq-q):active,
   <div id="glow" aria-hidden="true"></div>
   <header class="x-nav" id="xnav">
     <a class="x-brand" href="#home"><span class="brand-mark">S</span>SodaDLC</a>
-    <nav class="x-links"><a class="x-l" href="#catalog">Каталог</a><a class="x-l" href="#benefits">Преимущества</a><a class="x-l" href="#faq">FAQ</a><div class="auth-actions" id="authActions"><button class="auth-btn" onclick="openAuth('login')">Войти</button><button class="auth-btn primary" onclick="openAuth('register')">Регистрация</button></div></nav>
+    <nav class="x-links"><a class="x-l" href="#catalog">Каталог</a><a class="x-l" href="#benefits">Преимущества</a><a class="x-l" href="#faq">FAQ</a><a class="x-l x-builds-link" href="builds.html">Сборки</a><div class="auth-actions" id="authActions"><button class="auth-btn" onclick="openAuth('login')">Войти</button><button class="auth-btn primary" onclick="openAuth('register')">Регистрация</button></div></nav>
   </header>
   <main>
     <section class="x-wrap x-hero" id="home">
@@ -2515,6 +2515,18 @@ button.close:hover,button.telegram-link:hover,.nav-cta:hover,.telegram-link:hove
 .cube-logo{color:#092414!important;text-shadow:0 2px 0 rgba(255,255,255,.45)!important}
 .loader-spark{color:#a5f2c5!important;text-shadow:0 0 18px rgba(92,225,139,.72)!important}
 .x-mark{-webkit-text-stroke-color:rgba(165,242,197,.38)!important}
+</style>
+
+<style id="sodadlc-faq-cleanup-and-builds-nav">
+/* Make the builds page easy to reach from the main navigation. */
+.x-links .x-builds-link{padding:9px 14px;border:1px solid rgba(165,242,197,.34);border-radius:10px;color:#b9f5cb;background:rgba(80,155,103,.10);font-weight:800}
+.x-links .x-builds-link:hover{border-color:rgba(185,245,203,.65);background:rgba(80,155,103,.18);color:#e4ffeb}
+/* Remove the unintended nested glass-card look from FAQ accordion rows. */
+.faq-list .faq-item{background:transparent!important;border:0!important;border-bottom:1px solid rgba(190,230,200,.16)!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:hidden}
+.faq-list .faq-q{display:flex!important;width:100%;padding:19px 0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#e1e8f1!important;text-align:left}
+.faq-list .faq-a{padding:0!important;max-height:0;overflow:hidden}
+.faq-list .faq-item.open .faq-a{max-height:140px;padding:0 30px 18px 0!important}
+@media(max-width:760px){.x-links .x-builds-link{padding:8px 10px}}
 </style>
 </body>
 </html>
