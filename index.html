@@ -2664,6 +2664,71 @@ html,body{
 }
 </style>
 
+
+<style id="sodadlc-auth-header-final-alignment">
+/* Flatten the auth header into one clean row; remove the extra inset panel. */
+#authModal .modal-head{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  width:100%!important;box-sizing:border-box!important;
+  margin:0 0 22px!important;padding:0 0 18px!important;
+  border:0!important;border-bottom:1px solid rgba(145,205,158,.16)!important;
+  border-radius:0!important;background:transparent!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  gap:16px!important;
+}
+#authModal .modal-head>div{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important;min-width:0!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#authModal .modal-head .kicker{
+  display:inline-flex!important;align-items:center!important;width:max-content!important;max-width:100%!important;
+  box-sizing:border-box!important;margin:0!important;padding:6px 10px!important;
+  border:1px solid rgba(120,215,148,.25)!important;border-radius:999px!important;
+  background:rgba(37,117,62,.13)!important;color:#9de6b2!important;
+  font:800 9px/1.2 'Manrope',sans-serif!important;letter-spacing:1.5px!important;
+}
+#authModal .modal-head h3{
+  display:block!important;width:auto!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;background:transparent!important;
+  box-shadow:none!important;color:#eff9f1!important;-webkit-text-fill-color:#eff9f1!important;
+  font:750 26px/1.2 'Manrope',sans-serif!important;letter-spacing:-.6px!important;
+  text-decoration:none!important;text-shadow:none!important;
+}
+#authModal .modal-head .close{
+  display:grid!important;place-items:center!important;flex:0 0 38px!important;
+  width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;
+  box-sizing:border-box!important;margin:0!important;padding:0!important;
+  border:1px solid rgba(133,218,157,.28)!important;border-radius:12px!important;
+  background:rgba(36,104,56,.16)!important;color:#d9f8e1!important;
+  box-shadow:none!important;font:500 20px/1 'Manrope',sans-serif!important;
+}
+#authModal .modal-head .close:before,#authModal .modal-head .close:after{display:none!important;content:none!important}
+/* The login/register switch is plain inline text, never a framed button. */
+#authModal .auth-switch{
+  display:block!important;box-sizing:border-box!important;
+  width:100%!important;margin:17px 0 0!important;padding:0!important;
+  border:0!important;border-radius:0!important;background:transparent!important;
+  box-shadow:none!important;color:#a9bdae!important;
+  text-align:center!important;font:500 12px/1.7 'Manrope',sans-serif!important;
+}
+#authModal .auth-switch button,
+#authModal .auth-switch button:hover,
+#authModal .auth-switch button:focus,
+#authModal .auth-switch button:focus-visible{
+  appearance:none!important;display:inline!important;position:static!important;
+  width:auto!important;min-width:0!important;min-height:0!important;height:auto!important;
+  margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;outline:0!important;
+  background:none!important;box-shadow:none!important;
+  color:#a8efbd!important;font:750 12px/1.7 'Manrope',sans-serif!important;
+  text-decoration:underline!important;text-decoration-thickness:1px!important;
+  text-underline-offset:3px!important;text-shadow:none!important;
+  transform:none!important;filter:none!important;
+}
+#authModal .auth-switch button:before,#authModal .auth-switch button:after{display:none!important;content:none!important}
+@media(max-width:520px){
+ #authModal .modal-head{margin-bottom:18px!important;padding-bottom:15px!important}
+ #authModal .modal-head h3{font-size:23px!important}
+}
+</style>
+
 </body>
 </html>
 
