@@ -1479,11 +1479,6 @@ body.no-gl{background:radial-gradient(ellipse at 20% 10%,#103b27,transparent 55%
 <style id="sodadlc-desktop-cinematic-motion">
 @media (min-width:901px) and (pointer:fine){
  /* Loading: calm, deliberate reveal instead of a fast wipe */
- .loader{transition:opacity 1.25s cubic-bezier(.22,.61,.36,1),visibility 1.25s!important}
- .loader-word{animation:wordIn 2.4s .35s cubic-bezier(.16,1,.3,1) both!important}
- .loader-script{animation:wordWipe 5.8s .55s cubic-bezier(.22,.61,.36,1) forwards!important}
- .loader-spark{animation:sparkIn 2.4s .35s cubic-bezier(.16,1,.3,1) both!important}
- .loader-bar::after{animation:barFill 6.8s cubic-bezier(.22,.61,.36,1) forwards!important}
  /* Page atmosphere: slow, low-amplitude movement */
  .cold-mist i:nth-child(1){animation-duration:58s!important}
  .cold-mist i:nth-child(2){animation-duration:72s!important}
@@ -1983,6 +1978,24 @@ body{font-family:'DM Sans',Manrope,system-ui,sans-serif;letter-spacing:0}
 </style>
 
 
+<style id="sodadlc-loader-desktop-stability">
+/* Match desktop intro timing and sizing to the already-correct mobile reveal. */
+@media(min-width:901px) and (pointer:fine){
+  .loader{display:grid!important;place-items:center!important;overflow:hidden!important}
+  .loader-word{
+    width:max-content!important;max-width:86vw!important;
+    font-size:clamp(54px,8vw,100px)!important;
+    line-height:1.3!important;transform:none!important;
+    animation:wordIn 1.6s .2s ease-out forwards!important;
+  }
+  .loader-script{
+    font-size:1em!important;line-height:1.3!important;
+    animation:wordWipe 3.6s .3s cubic-bezier(.45,.05,.35,1) forwards!important;
+  }
+  .loader-spark{animation:sparkIn 1.6s .2s ease-out forwards!important}
+  .loader-bar::after{animation:barFill 4.4s ease-in-out forwards!important}
+}
+</style>
 </head>
 <body>
 <div class="loader" id="loader" aria-label="SodaDLC"><i class="loader-bar"></i><div class="loader-word"><span class="loader-spark">✦</span><span class="loader-script"><span class="ls">S</span>odaDLC</span></div></div>
@@ -2162,17 +2175,24 @@ const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(en
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 renderPlans();
 (function(){
-  var L=document.getElementById('loader'),started=false,loaded=false,t0=Date.now();
+  var L=document.getElementById('loader'),started=false,loaded=false;
   function hide(){L.classList.add('done')}
-  function fit(){var w=L.querySelector('.loader-word');var max=Math.min(innerWidth*.86,820),size=100;w.style.fontSize=size+'px';
-    for(var i=0;i<4;i++){var r=w.getBoundingClientRect().width||1;size=Math.max(30,Math.min(260,size*max/r));w.style.fontSize=size+'px';if(Math.abs(r-max)<2)break}}
-  if(document.fonts&&document.fonts.addEventListener)document.fonts.addEventListener('loadingdone',fit);
-  setTimeout(fit,300);setTimeout(fit,1500);
-  addEventListener('resize',fit);
-  function start(){if(started)return;started=true;fit();L.classList.add('go');setTimeout(function(){if(loaded)hide();else window.addEventListener('load',hide,{once:true})},4600);setTimeout(hide,8000)}
+  function start(){
+    if(started)return;
+    started=true;
+    L.classList.add('go');
+    /* Keep the loader visible until its wordmark has completely drawn. */
+    setTimeout(function(){
+      if(loaded)hide();
+      else window.addEventListener('load',hide,{once:true});
+    },4600);
+    setTimeout(hide,7000);
+  }
   window.addEventListener('load',function(){loaded=true});
-  var f=(document.fonts&&document.fonts.load)?Promise.all([document.fonts.load('120px "Ballet"','odaDLC'),document.fonts.load('120px "SodaScript"','S')]).catch(function(){}):Promise.resolve();
-  Promise.race([f,new Promise(function(r){setTimeout(r,2600)})]).then(start);
+  var f=(document.fonts&&document.fonts.load)
+    ?Promise.all([document.fonts.load('100px "Ballet"','odaDLC'),document.fonts.load('100px "SodaScript"','S')]).catch(function(){})
+    :Promise.resolve();
+  Promise.race([f,new Promise(function(resolve){setTimeout(resolve,2600)})]).then(start);
 })();
 </script>
 <div id="scrollBar" aria-hidden="true"></div>
