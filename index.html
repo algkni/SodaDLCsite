@@ -2986,6 +2986,113 @@ body{
 }
 </style>
 
+
+<style id="sodadlc-full-liquid-glass-surface-system">
+/* Full-page Liquid Glass pass. Uses the site's real IDs/classes; tariff WebGL canvas and card shader remain intact. */
+:root{--lg-edge:rgba(235,255,240,.3);--lg-shine:rgba(255,255,255,.24);--lg-text:#f1fff4;--lg-muted:rgba(216,235,221,.72)}
+body{
+ background:
+ radial-gradient(ellipse at 50% 0%,rgba(183,229,192,.14),transparent 38%),
+ radial-gradient(ellipse at 4% 48%,rgba(138,192,151,.09),transparent 32%),
+ radial-gradient(ellipse at 96% 74%,rgba(140,194,153,.08),transparent 34%),
+ #070c08!important;color:var(--lg-text)!important
+}
+#app{isolation:isolate}
+.x-nav,.x-nav.scrolled{
+ background:linear-gradient(125deg,rgba(245,255,247,.18),rgba(193,231,201,.055) 42%,rgba(8,20,12,.58)) padding-box,
+ linear-gradient(120deg,rgba(255,255,255,.58),rgba(213,245,220,.1) 42%,rgba(255,255,255,.32)) border-box!important;
+ border:1px solid transparent!important;border-radius:24px!important;
+ box-shadow:inset 0 1.5px 0 rgba(255,255,255,.36),inset 0 -1px 0 rgba(255,255,255,.07),0 20px 58px rgba(0,0,0,.32)!important;
+ -webkit-backdrop-filter:blur(32px) saturate(180%)!important;backdrop-filter:blur(32px) saturate(180%)!important
+}
+.x-nav:before{content:""!important;position:absolute!important;inset:1px!important;border-radius:inherit!important;pointer-events:none!important;background:linear-gradient(112deg,rgba(255,255,255,.13),transparent 28%,transparent 72%,rgba(255,255,255,.07))!important}
+.x-links a.x-l{border-radius:11px!important;color:rgba(239,250,241,.8)!important}
+.x-links a.x-l:hover{background:rgba(255,255,255,.12)!important;box-shadow:inset 0 1px rgba(255,255,255,.2)!important}
+.x-nav .auth-btn{border:1px solid rgba(255,255,255,.3)!important;border-radius:13px!important;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.055))!important;color:#f3fff5!important;box-shadow:inset 0 1px rgba(255,255,255,.32),0 8px 20px rgba(0,0,0,.18)!important;-webkit-backdrop-filter:blur(18px)!important;backdrop-filter:blur(18px)!important}
+.x-nav .auth-btn.primary{background:linear-gradient(145deg,rgba(244,255,246,.96),rgba(181,239,194,.88) 58%,rgba(118,205,141,.94))!important;color:#0a2613!important;border-color:rgba(255,255,255,.8)!important;box-shadow:inset 0 1px 0 white,0 8px 24px rgba(97,188,121,.24)!important}
+.x-badge,.x-eyebrow,.x-tabwrap .tabs,.proof-pill{
+ border:1px solid rgba(255,255,255,.25)!important;border-radius:999px!important;
+ background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.035))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 9px 24px rgba(0,0,0,.15)!important;
+ -webkit-backdrop-filter:blur(22px) saturate(175%)!important;backdrop-filter:blur(22px) saturate(175%)!important
+}
+.x-cta-row .primary-btn,.x-cta-in .primary-btn{border:1px solid rgba(255,255,255,.72)!important;border-radius:16px!important;background:linear-gradient(145deg,#f4fff6 0%,#b8f0c5 52%,#7bd497 100%)!important;color:#082313!important;box-shadow:inset 0 1px 0 white,0 10px 30px rgba(88,185,116,.24)!important}
+.x-cta-row .ghost-btn{border:1px solid rgba(255,255,255,.3)!important;border-radius:16px!important;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.045))!important;color:#f2fff4!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 10px 26px rgba(0,0,0,.18)!important;-webkit-backdrop-filter:blur(22px) saturate(170%)!important;backdrop-filter:blur(22px) saturate(170%)!important}
+/* Convert the feature rails, feature rows, and steps into consistent translucent glass surfaces. */
+.x-rail{perspective:none!important}
+.x-tilt{
+ border:1px solid rgba(255,255,255,.26)!important;border-radius:25px!important;
+ background:radial-gradient(240px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.16),transparent 72%),linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.035) 52%,rgba(5,19,10,.38)) padding-box,linear-gradient(125deg,rgba(255,255,255,.52),rgba(255,255,255,.08) 55%,rgba(255,255,255,.28)) border-box!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -1px rgba(255,255,255,.06),0 18px 45px rgba(0,0,0,.24)!important;
+ -webkit-backdrop-filter:blur(26px) saturate(175%)!important;backdrop-filter:blur(26px) saturate(175%)!important
+}
+.x-tilt:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 24px 55px rgba(0,0,0,.3)!important}
+.x-feats{border:0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.x-feat{
+ display:grid!important;grid-template-columns:64px minmax(0,1fr) 36px!important;gap:18px!important;
+ min-height:150px!important;padding:24px!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:22px!important;
+ background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.035) 60%,rgba(5,19,10,.3))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.27),0 14px 36px rgba(0,0,0,.18)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(165%)!important;backdrop-filter:blur(24px) saturate(165%)!important
+}
+.x-feat:hover{padding:24px!important;border-color:rgba(255,255,255,.4)!important;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.045) 60%,rgba(5,19,10,.3))!important}
+.x-feat:before{display:none!important}
+.x-num{font-size:clamp(38px,5vw,62px)!important;-webkit-text-stroke:1px rgba(226,255,233,.58)!important}
+.x-feat h3,.x-feat p{color:#effbf1!important}
+.x-steps{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.x-steps:before,.x-steps:after{display:none!important}
+.x-step{padding:24px 16px!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:22px!important;background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.035) 65%,rgba(5,19,10,.3))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.27),0 14px 34px rgba(0,0,0,.18)!important;-webkit-backdrop-filter:blur(24px) saturate(165%)!important;backdrop-filter:blur(24px) saturate(165%)!important}
+.x-dot{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 8px 22px rgba(0,0,0,.2)!important;border:1px solid rgba(255,255,255,.5)!important;background:linear-gradient(145deg,rgba(255,255,255,.42),rgba(133,210,151,.24))!important;color:#effff2!important}
+.x-step h3,.x-step p{color:#f0fbf2!important}
+.x-faq{gap:40px!important}
+.x-faq-side p{color:var(--lg-muted)!important}
+.faq-list .faq-item,#faq .faq-item{
+ border:1px solid rgba(255,255,255,.23)!important;border-radius:19px!important;
+ background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.035) 65%,rgba(5,19,10,.3))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.26),0 12px 32px rgba(0,0,0,.18)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(165%)!important;backdrop-filter:blur(24px) saturate(165%)!important
+}
+.faq-list .faq-item:hover,.faq-list .faq-item.open{border-color:rgba(255,255,255,.42)!important}
+.faq-q{color:#f4fff6!important}.faq-a{color:rgba(224,241,228,.82)!important}
+.x-cta{padding:1px!important;border:1px solid rgba(255,255,255,.35)!important;border-radius:30px!important;background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.04) 45%,rgba(255,255,255,.22))!important;animation:none!important;box-shadow:0 24px 65px rgba(0,0,0,.28)!important}
+.x-cta-in{border-radius:29px!important;background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.035) 62%,rgba(4,17,9,.48))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)!important;-webkit-backdrop-filter:blur(28px) saturate(175%)!important;backdrop-filter:blur(28px) saturate(175%)!important}
+.x-cta-in:before{opacity:.22!important}
+.x-foot{border-top:1px solid rgba(255,255,255,.18)!important}
+.x-foot-row a{color:#d5f7dc!important}
+/* Correct modal targets: the dialogs are #modal, #authModal and #cabinetModal, not .modal-backdrop. */
+#modal,#authModal,#cabinetModal{
+ background:rgba(2,8,4,.58)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(155%)!important;backdrop-filter:blur(24px) saturate(155%)!important
+}
+#modal>.modal,#authModal>.modal,#cabinetModal>.modal{
+ border:1px solid rgba(255,255,255,.34)!important;border-radius:27px!important;
+ background:linear-gradient(145deg,rgba(255,255,255,.21),rgba(255,255,255,.055) 40%,rgba(6,20,11,.78)) padding-box,linear-gradient(125deg,rgba(255,255,255,.62),rgba(255,255,255,.12) 48%,rgba(255,255,255,.34)) border-box!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px rgba(255,255,255,.05),0 35px 100px rgba(0,0,0,.62)!important;
+ -webkit-backdrop-filter:blur(34px) saturate(180%)!important;backdrop-filter:blur(34px) saturate(180%)!important
+}
+#modal .modal-head,#authModal .modal-head,#cabinetModal .modal-head{background:linear-gradient(180deg,rgba(255,255,255,.09),transparent)!important;border-bottom:1px solid rgba(255,255,255,.18)!important}
+#modal .kicker,#authModal .kicker,#cabinetModal .kicker{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.27)!important;color:#dff8e5!important}
+#modal .close,#authModal .close,#cabinetModal .close{border:1px solid rgba(255,255,255,.3)!important;border-radius:13px!important;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.05))!important;box-shadow:inset 0 1px rgba(255,255,255,.3)!important;color:white!important}
+#modal input,#modal select,#modal textarea,#authModal input,#authModal select,#authModal textarea,#cabinetModal input,#cabinetModal select,#cabinetModal textarea{
+ border:1px solid rgba(255,255,255,.24)!important;border-radius:14px!important;background:rgba(2,12,6,.35)!important;color:#f3fff5!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)!important
+}
+#modal input:focus,#modal select:focus,#authModal input:focus,#authModal select:focus,#cabinetModal input:focus,#cabinetModal select:focus{border-color:rgba(228,255,234,.62)!important;box-shadow:0 0 0 4px rgba(175,235,190,.12)!important}
+#authModal #authSubmit,#authModal .telegram-link,#modal .telegram-link{border:1px solid rgba(255,255,255,.7)!important;border-radius:15px!important;background:linear-gradient(145deg,#f4fff6,#b8efc4 55%,#7bd394)!important;color:#092414!important;box-shadow:inset 0 1px white,0 9px 25px rgba(74,165,99,.24)!important}
+#authModal .auth-switch button{color:#d4f8dc!important}
+/* Cabinet panels are generated dynamically; target their actual classes. */
+#cabinetModal .cabinet-hero,#cabinetModal .cabinet-metric,#cabinetModal .cabinet-info-card,#cabinetModal .admin-panel,#cabinetModal .admin-list-item{
+ border:1px solid rgba(255,255,255,.23)!important;border-radius:19px!important;
+ background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.035) 62%,rgba(4,18,9,.34))!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.26),0 12px 32px rgba(0,0,0,.18)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(165%)!important;backdrop-filter:blur(24px) saturate(165%)!important
+}
+#cabinetModal .cabinet .modal-head{background:rgba(255,255,255,.075)!important}
+#cabinetModal .cabinet-avatar{background:linear-gradient(145deg,#f4fff6,#b8efc4 55%,#7bd394)!important;color:#092414!important;border:1px solid rgba(255,255,255,.7)!important;box-shadow:inset 0 1px white,0 8px 22px rgba(0,0,0,.2)!important}
+#cabinetModal .role-chip,#cabinetModal .admin-owner-tag{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.25)!important;color:#e7ffec!important}
+#toast{border:1px solid rgba(255,255,255,.3)!important;border-radius:15px!important;background:rgba(21,43,27,.8)!important;box-shadow:inset 0 1px rgba(255,255,255,.2),0 16px 42px rgba(0,0,0,.28)!important;-webkit-backdrop-filter:blur(25px)!important;backdrop-filter:blur(25px)!important}
+@media(max-width:760px){.x-feats{grid-template-columns:1fr!important}.x-steps{grid-template-columns:1fr!important}.x-feat{grid-template-columns:48px minmax(0,1fr)!important;gap:13px!important}.x-feat>:last-child{display:none!important}.x-faq{grid-template-columns:1fr!important;gap:22px!important}.x-nav{border-radius:18px!important}}
+@media(prefers-reduced-motion:reduce){.x-cta{animation:none!important}}
+</style>
 </body>
 </html>
 
