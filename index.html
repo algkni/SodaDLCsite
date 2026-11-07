@@ -2764,6 +2764,20 @@ html,body{
 }
 </style>
 
+
+<style id="sodadlc-hide-confirm-password-on-login">
+/* The auth field has display:grid!important; explicitly preserve the hidden state. */
+#authModal #authConfirmWrap[hidden],
+#authModal #authConfirmWrap[hidden] *{
+  display:none!important;
+  visibility:hidden!important;
+  height:0!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+}
+</style>
+
 </body>
 </html>
 
